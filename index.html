@@ -565,8 +565,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
     <p>
       Regardless of how you choose to install it,
-      <strong>please make sure you install Python version 3.x</strong>
-      (e.g., 3.4 is fine).
+      <strong>please make sure you install Python version 2.6</strong>.
     </p>
 
     <p>
@@ -584,16 +583,16 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <h4 id="python-windows">Windows</h4>
       <ol>
         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Windows.</li>
-        <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
+        <li>Download the Python 2.7 installer for Windows.</li>
+        <li>Install Python 2.7 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
       </ol>
     </div>
     <div class="col-md-4">
       <h4 id="python-macosx">Mac OS X</h4>
       <ol>
         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for OS X.</li>
-        <li>Install Python 3 using all of the defaults for installation.</li>
+        <li>Download the Python 2.7 installer for OS X.</li>
+        <li>Install Python 2.7 using all of the defaults for installation.</li>
       </ol>
     </div>
     <div class="col-md-4">
@@ -601,8 +600,8 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       </p>
       <ol>
         <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Linux.</li>
-        <li>Install Python 3 using all of the defaults for installation.
+        <li>Download the Python 2.7 installer for Linux.</li>
+        <li>Install Python 2.7 using all of the defaults for installation.
         (Installation requires using the shell. If you aren't
         comfortable doing the installation yourself
         stop here and request help at the workshop.)</li>
@@ -632,3 +631,15 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   which has instructions on how to test that everything was installed correctly.
   </p>
 </div> <!-- End of 'Python' section. -->
+
+<div id='sunpy'><!--Start of the SunPy install section -->
+  <h3>SunPy</h3>
+  <p>
+    Given that you have installed python using anaconda, we can use the anaconda environment to install SunPy too.
+    <ol>
+      <li> To install SunPy launch a system command prompt or the ‘Anaconda Command Prompt’ (under Windows).
+      <li> Configure conda for sunpy downloads: <pre> conda config --add channels sunpy --add channels astropy </pre>
+      <li> Then to install SunPy <pre> conda install sunpy </pre>
+    </ol>
+  </p>
+</div>
