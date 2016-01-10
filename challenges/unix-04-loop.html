@@ -1,0 +1,115 @@
+---
+layout: page
+root: ..
+---
+
+
+<h2>Unix Shell - Loops</h2>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Variables in Loops</h2>
+</div>
+<div class="panel-body">
+<p>Suppose that <code>ls</code> initially displays:</p>
+<pre><code>fructose.dat    glucose.dat   sucrose.dat</code></pre>
+<p>What is the output of:</p>
+<pre><code>for datafile in *.dat
+do
+    ls *.dat
+done</code></pre>
+<p>Now, what is the output of:</p>
+<pre><code>for datafile in *.dat
+do
+  ls $datafile
+done</code></pre>
+<p>Why do these two loops give you different outputs?</p>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Saving to a File in a Loop - Part One</h2>
+</div>
+<div class="panel-body">
+<p>In the same directory, what is the effect of this loop?</p>
+<pre><code>for sugar in *.dat
+do
+    echo $sugar
+    cat $sugar &gt; xylose.dat
+done</code></pre>
+<ol style="list-style-type: decimal">
+<li>Prints <code>fructose.dat</code>, <code>glucose.dat</code>, and <code>sucrose.dat</code>, and the text from <code>sucrose.dat</code> will be saved to a file called <code>xylose.dat</code>.</li>
+<li>Prints <code>fructose.dat</code>, <code>glucose.dat</code>, and <code>sucrose.dat</code>, and the text from all three files would be concatenated and saved to a file called <code>xylose.dat</code>.</li>
+<li>Prints <code>fructose.dat</code>, <code>glucose.dat</code>, <code>sucrose.dat</code>, and <code>xylose.dat</code>, and the text from <code>sucrose.dat</code> will be saved to a file called <code>xylose.dat</code>.</li>
+<li>None of the above.</li>
+</ol>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Saving to a File in a Loop - Part Two</h2>
+</div>
+<div class="panel-body">
+<p>In another directory, where <code>ls</code> returns:</p>
+<pre><code>fructose.dat    glucose.dat   sucrose.dat   maltose.txt</code></pre>
+<p>What would be the output of the following loop?</p>
+<pre><code>for datafile in *.dat
+do
+    cat $datafile &gt;&gt; sugar.dat
+done</code></pre>
+<ol style="list-style-type: decimal">
+<li>All of the text from <code>fructose.dat</code>, <code>glucose.dat</code> and <code>sucrose.dat</code> would be concatenated and saved to a file called <code>sugar.dat</code>.</li>
+<li>The text from <code>sucrose.dat</code> will be saved to a file called <code>sugar.dat</code>.</li>
+<li>All of the text from <code>fructose.dat</code>, <code>glucose.dat</code>, <code>sucrose.dat</code> and <code>maltose.txt</code> would be concatenated and saved to a file called <code>sugar.dat</code>.</li>
+<li>All of the text from <code>fructose.dat</code>, <code>glucose.dat</code> and <code>sucrose.dat</code> would be printed to the screen and saved to a file called <code>sugar.dat</code></li>
+</ol>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Nested Loops and Command-Line Expressions</h2>
+</div>
+<div class="panel-body">
+<p>The <code>expr</code> does simple arithmetic using command-line parameters:</p>
+<pre><code>$ expr 3 + 5
+8
+$ expr 30 / 5 - 2
+4</code></pre>
+<p>Given this, what is the output of:</p>
+<pre><code>for left in 2 3
+do
+    for right in $left
+    do
+        expr $left + $right
+    done
+done</code></pre>
+</div>
+</section>
+
+<section class="challenge panel panel-success2">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Doing a Dry Run</h2>
+</div>
+<div class="panel-body">
+<p>Suppose we want to preview the commands the following loop will execute without actually running those commands:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">for</span> <span class="kw">file</span> in *.dat
+<span class="kw">do</span>
+  <span class="kw">analyze</span> <span class="ot">$file</span> <span class="kw">&gt;</span> analyzed-<span class="ot">$file</span>
+<span class="kw">done</span></code></pre>
+<p>What is the difference between the two loops below, and which one would we want to run?</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Version 1</span>
+<span class="kw">for</span> <span class="kw">file</span> in *.dat
+<span class="kw">do</span>
+  <span class="kw">echo</span> analyze <span class="ot">$file</span> <span class="kw">&gt;</span> analyzed-<span class="ot">$file</span>
+<span class="kw">done</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Version 2</span>
+<span class="kw">for</span> <span class="kw">file</span> in *.dat
+<span class="kw">do</span>
+  <span class="kw">echo</span> <span class="st">&quot;analyze </span><span class="ot">$file</span><span class="st"> &gt; analyzed-</span><span class="ot">$file</span><span class="st">&quot;</span>
+<span class="kw">done</span></code></pre>
+</div>
+</section>
+

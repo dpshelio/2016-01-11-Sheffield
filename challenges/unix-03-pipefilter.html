@@ -1,0 +1,135 @@
+---
+layout: page
+root: ..
+---
+
+
+<h2>Unix Shell - Pipes and Filters</h2>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>What does <code>sort -n</code> do?</h2>
+</div>
+<div class="panel-body">
+<p>If we run <code>sort</code> on this file:</p>
+<pre><code>10
+2
+19
+22
+6</code></pre>
+<p>the output is:</p>
+<pre><code>10
+19
+2
+22
+6</code></pre>
+<p>If we run <code>sort -n</code> on the same input, we get this instead:</p>
+<pre><code>2
+6
+10
+19
+22</code></pre>
+<p>Explain why <code>-n</code> has this effect.</p>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Piping commands together</h2>
+</div>
+<div class="panel-body">
+<p>In our current directory, we want to find the 3 files which have the least number of lines. Which command listed below would work?</p>
+<ol style="list-style-type: decimal">
+<li><code>wc -l * &gt; sort -n &gt; head -3</code></li>
+<li><code>wc -l * | sort -n | head 1-3</code></li>
+<li><code>wc -l * | head -3 | sort -n</code></li>
+<li><code>wc -l * | sort -n | head -3</code></li>
+</ol>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Pipe reading comprehension</h2>
+</div>
+<div class="panel-body">
+<p>A file called <code>animals.txt</code> contains the following data:</p>
+<pre><code>2012-11-05,deer
+2012-11-05,rabbit
+2012-11-05,raccoon
+2012-11-06,rabbit
+2012-11-06,deer
+2012-11-06,fox
+2012-11-07,rabbit
+2012-11-07,bear</code></pre>
+<p>What text passes through each of the pipes and the final redirect in the pipeline below?</p>
+<pre><code>cat animals.txt | head -5 | tail -3 | sort -r &gt; final.txt</code></pre>
+</div>
+</section>
+
+<section class="challenge panel panel-success2">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>What does <code>&lt;</code> mean?</h2>
+</div>
+<div class="panel-body">
+<p>What is the difference between:</p>
+<pre><code>wc -l &lt; mydata.dat</code></pre>
+<p>and:</p>
+<pre><code>wc -l mydata.dat</code></pre>
+</div>
+</section>
+
+<section class="challenge panel panel-success2">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>What does <code>&gt;&gt;</code> mean?</h2>
+</div>
+<div class="panel-body">
+<p>What is the difference between:</p>
+<pre><code>echo hello &gt; testfile01.txt</code></pre>
+<p>and:</p>
+<pre><code>echo hello &gt;&gt; testfile02.txt</code></pre>
+<p>Hint: Try executing each command twice in a row and then examining the output files.</p>
+</div>
+</section>
+
+
+<section class="challenge panel panel-success2">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Why does <code>uniq</code> only remove adjacent duplicates?</h2>
+</div>
+<div class="panel-body">
+<p>The command <code>uniq</code> removes adjacent duplicated lines from its input. For example, if a file <code>salmon.txt</code> contains:</p>
+<pre><code>coho
+coho
+steelhead
+coho
+steelhead
+steelhead</code></pre>
+<p>then <code>uniq salmon.txt</code> produces:</p>
+<pre><code>coho
+steelhead
+coho
+steelhead</code></pre>
+<p>Why do you think <code>uniq</code> only removes <em>adjacent</em> duplicated lines? (Hint: think about very large data sets.) What other command could you combine with it in a pipe to remove all duplicated lines?</p>
+</div>
+</section>
+
+<section class="challenge panel panel-success2">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Pipe construction</h2>
+</div>
+<div class="panel-body">
+<p>The command:</p>
+<pre><code>$ cut -d , -f 2 animals.txt</code></pre>
+<p>produces the following output:</p>
+<pre><code>deer
+rabbit
+raccoon
+rabbit
+deer
+fox
+rabbit
+bear</code></pre>
+<p>What other command(s) could be added to this in a pipeline to find out what animals the file contains (without any duplicates in their names)?</p>
+</div>
+</section>
