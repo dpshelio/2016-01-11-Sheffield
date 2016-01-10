@@ -1,0 +1,81 @@
+---
+layout: page
+root: ..
+---
+
+
+<h2>Unix Shell - Creting Things</h2>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Renaming files</h2>
+</div>
+<div class="panel-body">
+<p>Suppose that you created a <code>.txt</code> file in your current directory to contain a list of the statistical tests you will need to do to analyze your data, and named it: <code>statstics.txt</code></p>
+<p>After creating and saving this file you realize you misspelled the filename! You want to correct the mistake, which of the following commands could you use to do so?</p>
+<ol style="list-style-type: decimal">
+<li><code>cp statstics.txt statistics.txt</code></li>
+<li><code>mv statstics.txt statistics.txt</code></li>
+<li><code>mv statstics.txt .</code></li>
+<li><code>cp statstics.txt .</code></li>
+</ol>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Moving and Copying</h2>
+</div>
+<div class="panel-body">
+<p>What is the output of the closing <code>ls</code> command in the sequence shown below?</p>
+<pre><code>$ pwd
+/Users/jamie/data
+$ ls
+proteins.dat
+$ mkdir recombine
+$ mv proteins.dat recombine
+$ cp recombine/proteins.dat ../proteins-saved.dat
+$ ls</code></pre>
+<ol style="list-style-type: decimal">
+<li><code>proteins-saved.dat recombine</code></li>
+<li><code>recombine</code></li>
+<li><code>proteins.dat recombine</code></li>
+<li><code>proteins-saved.dat</code></li>
+</ol>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Organizing Directories and Files</h2>
+</div>
+<div class="panel-body">
+<p>Jamie is working on a project and she sees that her files aren’t very well organized:</p>
+<pre><code>$ ls -F
+analyzed/  fructose.dat    raw/   sucrose.dat</code></pre>
+<p>The <code>fructose.dat</code> and <code>sucrose.dat</code> files contain output from her data analysis. What command(s) covered in this lesson does she need to run so that the commands below will produce the output shown?</p>
+<pre><code>$ ls -F
+analyzed/   raw/
+$ ls analyzed
+fructose.dat    sucrose.dat</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Copy with Multiple Filenames</h2>
+</div>
+<div class="panel-body">
+<p>What does <code>cp</code> do when given several filenames and a directory name, as in:</p>
+<pre><code>$ mkdir backup
+$ cp thesis/citations.txt thesis/quotations.txt backup</code></pre>
+<p>What does <code>cp</code> do when given three or more filenames, as in:</p>
+<pre><code>$ ls -F
+intro.txt    methods.txt    survey.txt
+$ cp intro.txt methods.txt survey.txt</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success2">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Listing Recursively and By Time</h2>
+</div>
+<div class="panel-body">
+<p>The command <code>ls -R</code> lists the contents of directories recursively, i.e., lists their sub-directories, sub-sub-directories, and so on in alphabetical order at each level. The command <code>ls -t</code> lists things by time of last change, with most recently changed files or directories first. In what order does <code>ls -R -t</code> display things?</p>
+</div>
+</section>

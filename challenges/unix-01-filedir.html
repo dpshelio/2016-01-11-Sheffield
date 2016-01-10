@@ -1,0 +1,86 @@
+---
+layout: page
+root: ..
+---
+
+
+<h2>Unix Shell - Files and directories</h2>
+<div class="figure">
+<img src="../images/filesystem-challenge.svg" alt="File System for Challange Questions" /><p class="caption">File System for Challange Questions</p>
+</div>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Many ways to do the same thing - absolute vs relative paths</h2>
+</div>
+<div class="panel-body">
+<p>For a hypothetical filesystem location of <code>/Users/amanda/data/</code>, select each of the below commands that Amanda could use to navigate to her home directory, which is <code>Users/amanda</code>.</p>
+<ol style="list-style-type: decimal">
+<li><code>cd .</code></li>
+<li><code>cd /</code></li>
+<li><code>cd /home/amanda</code></li>
+<li><code>cd ../..</code></li>
+<li><code>cd ~</code></li>
+<li><code>cd home</code></li>
+<li><code>cd ~/data/..</code></li>
+<li><code>cd</code></li>
+<li><code>cd ..</code></li>
+</ol>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Relative path resolution</h2>
+</div>
+<div class="panel-body">
+<p>If <code>pwd</code> displays <code>/Users/thing</code>, what will <code>ls ../backup</code> display?</p>
+<ol style="list-style-type: decimal">
+<li><code>../backup: No such file or directory</code></li>
+<li><code>2012-12-01 2013-01-08 2013-01-27</code></li>
+<li><code>2012-12-01/ 2013-01-08/ 2013-01-27/</code></li>
+<li><code>original pnas_final pnas_sub</code></li>
+</ol>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span><code>ls</code> reading comprehension</h2>
+</div>
+<div class="panel-body">
+<p>If <code>pwd</code> displays <code>/Users/backup</code>, and <code>-r</code> tells <code>ls</code> to display things in reverse order, what command will display:</p>
+<pre><code>pnas-sub/ pnas-final/ original/</code></pre>
+<ol style="list-style-type: decimal">
+<li><code>ls pwd</code></li>
+<li><code>ls -r -F</code></li>
+<li><code>ls -r -F /Users/backup</code></li>
+<li>Either #2 or #3 above, but not #1.</li>
+</ol>
+</div>
+</section>
+
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Default <code>cd</code> action</h2>
+</div>
+<div class="panel-body">
+<p>What does the command <code>cd</code> without a directory name do?</p>
+<ol style="list-style-type: decimal">
+<li>It has no effect.</li>
+<li>It changes the working directory to <code>/</code>.</li>
+<li>It changes the working directory to the user’s home directory.</li>
+<li>It produces an error message.</li>
+</ol>
+</div>
+</section>
+
+<section class="challenge panel panel-success2">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Exploring more <code>ls</code> arguments</h2>
+</div>
+<div class="panel-body">
+<p>What does the command <code>ls</code> do when used with the <code>-s</code> and <code>-h</code> arguments?</p>
+</div>
+</section>
+

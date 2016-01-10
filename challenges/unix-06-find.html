@@ -1,0 +1,64 @@
+---
+layout: page
+root: ..
+---
+
+
+<h2>Unix Shell - Finding Things</h2>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Using grep</h2>
+</div>
+<div class="panel-body">
+<pre><code>The Tao that is seen
+Is not the true Tao, until
+You bring fresh toner.
+
+With searching comes loss
+and the presence of absence:
+&quot;My Thesis&quot; not found.
+
+Yesterday it worked
+Today it is not working
+Software is like that.</code></pre>
+<p>From the above text, contained in the file <code>haiku.txt</code>, which command would result in the following output:</p>
+<pre><code>and the presence of absence:</code></pre>
+<ol style="list-style-type: decimal">
+<li><code>grep &quot;of&quot; haiku.txt</code></li>
+<li><code>grep -E &quot;of&quot; haiku.txt</code></li>
+<li><code>grep -w &quot;of&quot; haiku.txt</code></li>
+<li><code>grep -i &quot;of&quot; haiku.txt</code></li>
+</ol>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span><code>find</code> pipeline reading comprehension</h2>
+</div>
+<div class="panel-body">
+<p>Write a short explanatory comment for the following shell script:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">find</span> . -name <span class="st">&#39;*.dat&#39;</span> <span class="kw">|</span> <span class="kw">wc</span> -l <span class="kw">|</span> <span class="kw">sort</span> -n</code></pre>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Matching <code>ose.dat</code> but not <code>temp</code></h2>
+</div>
+<div class="panel-body">
+<p>The <code>-v</code> flag to <code>grep</code> inverts pattern matching, so that only lines which do <em>not</em> match the pattern are printed. Given that, which of the following commands will find all files in <code>/data</code> whose names end in <code>ose.dat</code> (e.g., <code>sucrose.dat</code> or <code>maltose.dat</code>), but do <em>not</em> contain the word <code>temp</code>?</p>
+<ol style="list-style-type: decimal">
+<li><p><code>find /data -name '*.dat' | grep ose | grep -v temp</code></p></li>
+<li><p><code>find /data -name ose.dat | grep -v temp</code></p></li>
+<li><p><code>grep -v &quot;temp&quot; $(find /data -name '*ose.dat')</code></p></li>
+<li><p>None of the above.</p></li>
+</ol>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2><span class="glyphicon glyphicon-pencil"></span>Little Women</h2>
+</div>
+<div class="panel-body">
+<p>You and your friend, having just finished reading <em>Little Women</em> by Louisa May Alcott, are in an argument. Of the four sisters in the book, Jo, Meg, Beth, and Amy, your friend thinks that Jo was the most mentioned. You, however, are certain it was Amy. Luckily, you have a file <code>LittleWomen.txt</code> containing the full text of the novel. Using a<code>for</code> loop, how would you tabulate the number of times each of the four sisters is mentioned? Hint: one solution might employ the commands <code>grep</code> and <code>wc</code> and a <code>|</code>, while another might utilize <code>grep</code> options.</p>
+</div>
+</section>
